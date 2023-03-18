@@ -1,14 +1,14 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 namespace Shooter
 {
     /// <summary>
-    /// Класс для управления игроком
+    /// РљР»Р°СЃСЃ РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ РёРіСЂРѕРєРѕРј
     /// </summary>
     public class MovementController : MonoBehaviour
     {
         /// <summary>
-        /// Ссылка на игрока
+        /// РЎСЃС‹Р»РєР° РЅР° РёРіСЂРѕРєР°
         /// </summary>
         private Player player;
 
@@ -25,7 +25,7 @@ namespace Shooter
         }
 
         /// <summary>
-        /// Реализация управления с клавиатуры
+        /// Р РµР°Р»РёР·Р°С†РёСЏ СѓРїСЂР°РІР»РµРЅРёСЏ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹
         /// </summary>
         private void ControlKeyboard()
         {
