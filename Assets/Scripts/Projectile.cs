@@ -14,6 +14,13 @@ namespace Shooter
     public class Projectile : Entity
     {
         [Header("Свойства снаряда")]
+
+        /// <summary>
+        /// Тип снаряда
+        /// </summary>
+        [SerializeField] private AmmoType ammoType;
+        public AmmoType AmmoType => ammoType;
+
         /// <summary>
         /// Скорость снаряда
         /// </summary>

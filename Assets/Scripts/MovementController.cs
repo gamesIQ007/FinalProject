@@ -39,14 +39,12 @@ namespace Shooter
                 movementVector = movementVector.normalized;
             }
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Mouse0))
             {
-                //player.Fire(TurretMode.Primary);
-            }
+                Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                point = new Vector3(point.x, point.y, 0);
 
-            if (Input.GetKey(KeyCode.LeftControl))
-            {
-                //player.Fire(TurretMode.Secondary);
+                player.Fire(point);
             }
 
             player.MovementControl = movementVector;

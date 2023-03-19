@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nickname: 
+  ammoType: 0
   velocity: 10
   lifeTime: 10
   damage: 10
