@@ -37,7 +37,7 @@ namespace Shooter
         /// <summary>
         /// Таймер
         /// </summary>
-        private float timer;
+        private float timer = 0;
 
         /// <summary>
         /// Дестрактибл родителя
@@ -83,7 +83,7 @@ namespace Shooter
         private void Update()
         {
             timer += Time.deltaTime;
-
+            
             if (timer > lifeTime)
             {
                 Destroy(gameObject);
@@ -119,7 +119,7 @@ namespace Shooter
                         ApplyDamage(destructiblesInArea[i]);
                     }
                 }
-
+                
                 OnProjectileLifeEnd(hit.collider, hit.point);
             }
 
