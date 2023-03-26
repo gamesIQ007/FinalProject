@@ -8,7 +8,7 @@ namespace Shooter
     public class Weapon : MonoBehaviour
     {
         /// <summary>
-        /// Свойства турели. ScriptableObject
+        /// Свойства оружия. ScriptableObject
         /// </summary>
         [SerializeField] private WeaponProperties weaponProperties;
 
@@ -49,6 +49,7 @@ namespace Shooter
         {
             if (weaponProperties == null) return;
             if (CanFire == false) return;
+			if (player.AmmoBag.TryTakeAmmo(weaponProperties.ProjectilePrefab.AmmoType, 1) == false) return;
 
             Projectile projectile = Instantiate(weaponProperties.ProjectilePrefab);
             projectile.transform.position = transform.position;

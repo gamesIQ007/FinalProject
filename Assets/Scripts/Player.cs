@@ -3,6 +3,7 @@
 namespace Shooter
 {
     [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(AmmoBag))]
     [RequireComponent(typeof(AudioSource))]
 
     /// <summary>
@@ -29,6 +30,12 @@ namespace Shooter
         /// Сохранённая ссылка на ригид
         /// </summary>
         private Rigidbody2D rb;
+		
+        /// <summary>
+        /// Сохранённая ссылка на сумку боеприпасов
+        /// </summary>
+        private AmmoBag ammoBag;
+        public AmmoBag AmmoBag => ammoBag;
 
         /// <summary>
         /// Звуки
@@ -40,6 +47,7 @@ namespace Shooter
         {
             base.Start();
             rb = GetComponent<Rigidbody2D>();
+            ammoBag = GetComponent<AmmoBag>();
             audio = GetComponent<AudioSource>();
         }
 
@@ -90,6 +98,7 @@ namespace Shooter
         /// <param name="point">Цель выстрела</param>
         public void Fire(Vector3 point)
         {
+            //Debug.Log(ammoBag.)
             weapons[activeWeaponIndex].transform.up = point - weapons[activeWeaponIndex].transform.position;
             weapons[activeWeaponIndex].Fire();
         }
