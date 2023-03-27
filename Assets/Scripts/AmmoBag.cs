@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Shooter
 {
+	/// <summary>
+	/// Сумка с боеприпасами
+	/// </summary>
 	public class AmmoBag : MonoBehaviour
 	{
 		/// <summary>
