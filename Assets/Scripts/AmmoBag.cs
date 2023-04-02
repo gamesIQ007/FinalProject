@@ -44,7 +44,6 @@ namespace Shooter
 			if (ammo.ContainsKey(type) && ammo[type] >= amount)
 			{
 				ammo[type] -= amount;
-				Debug.Log(ammo[type]);
 				return true;
 			}
 			else

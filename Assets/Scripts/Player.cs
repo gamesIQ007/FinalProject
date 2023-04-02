@@ -72,33 +72,11 @@ namespace Shooter
 
 
         /// <summary>
-        /// Возможно ли отнять патроны
-        /// </summary>
-        /// <param name="count">Количество отнимаемых патронов</param>
-        /// <returns>Удачное ли изъяние патронов</returns>
-        public bool DrawAmmo(int count)
-        {
-            if (count == 0)
-            {
-                return true;
-            }
-
-            /*if (m_SecondaryAmmo >= count)
-            {
-                m_SecondaryAmmo -= count;
-                return true;
-            }*/
-
-            return false;
-        }
-
-        /// <summary>
         /// Стрельба
         /// </summary>
         /// <param name="point">Цель выстрела</param>
         public void Fire(Vector3 point)
         {
-            //Debug.Log(ammoBag.)
             weapons[activeWeaponIndex].transform.up = point - weapons[activeWeaponIndex].transform.position;
             weapons[activeWeaponIndex].Fire();
         }

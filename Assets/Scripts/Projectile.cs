@@ -8,6 +8,7 @@ using UnityEditor;
 namespace Shooter
 {
     [RequireComponent(typeof(CircleCollider2D))]
+
     /// <summary>
     /// Снаряд и его поведение
     /// </summary>
@@ -181,7 +182,10 @@ namespace Shooter
         /// <param name="pos">Позиция</param>
         private void OnProjectileLifeEnd(Collider2D col, Vector2 pos)
         {
-            Instantiate(impactEffectPrefab, transform.position, Quaternion.identity);
+            if (impactEffectPrefab)
+            {
+                Instantiate(impactEffectPrefab, transform.position, Quaternion.identity);
+            }
 
             Destroy(gameObject);
         }
@@ -230,5 +234,6 @@ namespace Shooter
             GetComponent<CircleCollider2D>().radius = radius;
         }
 #endif
+
     }
 }
