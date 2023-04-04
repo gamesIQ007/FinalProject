@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Shooter
 {
@@ -19,12 +20,17 @@ namespace Shooter
         /// <summary>
         /// Список оружия
         /// </summary>
-        [SerializeField] private Weapon[] weapons;
+        [SerializeField] private List<WeaponProperties> weapons;
+
+        /// <summary>
+        /// Оружие в руках
+        /// </summary>
+        private Weapon weapon;
 
         /// <summary>
         /// Индекс активного оружия
         /// </summary>
-        private int activeWeaponIndex = 0;
+        private int activeWeaponIndex = -1;
 
         /// <summary>
         /// Сохранённая ссылка на ригид
@@ -49,6 +55,8 @@ namespace Shooter
             rb = GetComponent<Rigidbody2D>();
             ammoBag = GetComponent<AmmoBag>();
             audio = GetComponent<AudioSource>();
+            weapon = GetComponentInChildren<Weapon>();
+            weapons = new List<WeaponProperties>();
         }
 
         private void FixedUpdate()
@@ -70,6 +78,11 @@ namespace Shooter
             rb.velocity = new Vector2(MovementControl.x * movementSpeed, MovementControl.y * movementSpeed);
         }
 
+        private void SetActiveWeapon(WeaponProperties properties)
+        {
+            weapon.SetProperties(weapons[activeWeaponIndex]);
+        }
+
 
         /// <summary>
         /// Стрельба
@@ -77,13 +90,19 @@ namespace Shooter
         /// <param name="point">Цель выстрела</param>
         public void Fire(Vector3 point)
         {
-            weapons[activeWeaponIndex].transform.up = point - weapons[activeWeaponIndex].transform.position;
-            weapons[activeWeaponIndex].Fire();
+            weapon.transform.up = point - weapon.transform.position;
+            weapon.Fire();
         }
 
-        public void AddWeapon()
+        /// <summary>
+        /// Добавить оружие
+        /// </summary>
+        /// <param name="weaponProperties">Свойства оружия</param>
+        public void AddWeapon(WeaponProperties weaponProperties)
         {
-
+            weapons.Add(weaponProperties);
+            activeWeaponIndex = weapons.IndexOf(weaponProperties);
+            SetActiveWeapon(weapons[activeWeaponIndex]);
         }
     }
 }

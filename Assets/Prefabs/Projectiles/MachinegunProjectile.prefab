@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3587379047505807128}
   - component: {fileID: 3704813918988035700}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: MachinegunProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,8 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nickname: 
-  ammoType: 1
-  velocity: 10
+  ammoType: 3
+  velocity: 15
   lifeTime: 10
   damage: 10
   impactEffectPrefab: {fileID: 7803059288513983029, guid: 78d4209507718084e8d35f34165d424e, type: 3}

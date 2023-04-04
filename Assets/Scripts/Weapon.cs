@@ -27,10 +27,16 @@ namespace Shooter
         /// </summary>
         private Player player;
 
+        /// <summary>
+        /// Изображение оружия
+        /// </summary>
+        private SpriteRenderer sr;
+
         
         private void Start()
         {
             player = transform.root.GetComponent<Player>();
+            sr = GetComponentInChildren<SpriteRenderer>();
         }
 
         private void Update()
@@ -41,7 +47,18 @@ namespace Shooter
             }
         }
 
-        
+
+        /// <summary>
+        /// Назначить свойства оружия
+        /// </summary>
+        /// <param name="properties">Свойства оружия</param>
+        public void SetProperties(WeaponProperties properties)
+        {
+            refireTimer = 0;
+            sr.sprite = properties.Sprite;
+            weaponProperties = properties;
+        }
+
         /// <summary>
         /// Стрельба
         /// </summary>
@@ -60,17 +77,6 @@ namespace Shooter
 
             player.audio.clip = weaponProperties.LaunchSFX;
             player.audio.Play();
-        }
-
-        /// <summary>
-        /// Замена режима стрельбы
-        /// </summary>
-        /// <param name="props"></param>
-        public void AssignLoadout(WeaponProperties props)
-        {
-            refireTimer = 0;
-
-            weaponProperties = props;
         }
     }
 }

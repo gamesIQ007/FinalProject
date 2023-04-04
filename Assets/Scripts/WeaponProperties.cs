@@ -10,6 +10,17 @@ namespace Shooter
     public class WeaponProperties : ScriptableObject
     {
         /// <summary>
+        /// Название оружия
+        /// </summary>
+        [SerializeField] private string nickname;
+
+        /// <summary>
+        /// Спрайт оружия
+        /// </summary>
+        [SerializeField] private Sprite sprite;
+        public Sprite Sprite => sprite;
+
+        /// <summary>
         /// Префаб снаряда
         /// </summary>
         [SerializeField] private Projectile projectilePrefab;

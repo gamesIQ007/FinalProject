@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2dd123025c6c343b04117f0140d2a7, type: 3}
   m_Name: Machinegun
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 3587379047505807128, guid: 5c3c442726bbf004f95901f288064d7d, type: 3}
+  nickname: Machinegun
+  sprite: {fileID: 21300000, guid: ec106e8e17a5b0645ac6f5f5d0c2de63, type: 3}
+  projectilePrefab: {fileID: 3587379047505807128, guid: f88408a5e9f1e7f428f717b3bff1aacd, type: 3}
   rateOfFire: 0.1
   launchSFX: {fileID: 8300000, guid: 422c403d435fec040915a07735717917, type: 3}
