@@ -1,7 +1,7 @@
-namespace Shooter
+п»їnamespace Shooter
 {
     /// <summary>
-    /// Типы боеприпасов
+    /// РўРёРїС‹ Р±РѕРµРїСЂРёРїР°СЃРѕРІ
     /// </summary>
     public enum AmmoType
     {

@@ -80,5 +80,10 @@ namespace Shooter
             weapons[activeWeaponIndex].transform.up = point - weapons[activeWeaponIndex].transform.position;
             weapons[activeWeaponIndex].Fire();
         }
+
+        public void AddWeapon()
+        {
+
+        }
     }
 }
